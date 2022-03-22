@@ -7,7 +7,51 @@
 
 import Foundation
 
+func q1065() {
+    // try 2
+    let input = Int(readLine()!)!
+    var r = 0
 
+    if input < 100 {
+        print(input)
+    } else {
+        r = 99
+        for i in 100...input where i != 1000 {
+            if (i % 10)-((i / 10) % 10) == ((i / 10) % 10)-((i / 100) % 10) {
+                r += 1
+            }
+        }
+        
+        print(r)
+    }
+    
+//    // try 1
+//    let input = Int(readLine()!)!
+//    var r = 0
+//    var arr = [Int]()
+//
+//    for i in 1...input {
+//        var n = i
+//        if n < 100 {
+//            r += 1
+//            continue
+//        }
+//        if n != 1000 {
+//            while n > 0 {
+//                arr.append(n % 10)
+//                n /= 10
+//            }
+////            if arr.count > 2 {
+//                if arr[0] - arr[1] == arr[1] - arr[2] {
+//                    r += 1
+//                }
+//                arr.removeAll()
+////            }
+//        }
+//    }
+//
+//    print(r)
+}
 
 func q4673() {
     func selfNum(_ n: Int) -> Int {
@@ -469,46 +513,46 @@ func q11720() {
     }
 }
 
-func q1065() {
-    let input = Int(readLine()!)!
-    var res = input
-    var arr:[Int] = [Int]()
-    
-    if 0 < input && input < 100 {
-        res = input
-        
-    } else if input == 1000 {
-        res = 144
-        
-    } else  {
-        res = 99
-        for i in 100 ... input {
-            var m = i
-            while m > 0 {
-                let value = m % 10
-                arr.append(value)
-                m = m / 10
-            }
-//            arr.reverse()
-            if arr[2] - arr[1] == arr[1] - arr[0] {
-                print(arr)
-                res += 1
-            }
-            arr.removeAll()
-//            let one = i % 10            // 일
-//            let two = (i / 10) % 10     // 십
-//            let three = (i / 100) % 10  // 백
-//            if three - two == two - one {
-////                print(three)
-////                print(two)
-////                print(one)
+//func q1065() {
+//    let input = Int(readLine()!)!
+//    var res = input
+//    var arr:[Int] = [Int]()
+//
+//    if 0 < input && input < 100 {
+//        res = input
+//
+//    } else if input == 1000 {
+//        res = 144
+//
+//    } else  {
+//        res = 99
+//        for i in 100 ... input {
+//            var m = i
+//            while m > 0 {
+//                let value = m % 10
+//                arr.append(value)
+//                m = m / 10
+//            }
+////            arr.reverse()
+//            if arr[2] - arr[1] == arr[1] - arr[0] {
+//                print(arr)
 //                res += 1
 //            }
-
-        }
-    }
-    print(res)
-}
+//            arr.removeAll()
+////            let one = i % 10            // 일
+////            let two = (i / 10) % 10     // 십
+////            let three = (i / 100) % 10  // 백
+////            if three - two == two - one {
+//////                print(three)
+//////                print(two)
+//////                print(one)
+////                res += 1
+////            }
+//
+//        }
+//    }
+//    print(res)
+//}
 
 func q3052() {
     var nCount:[Int] = [Int]()

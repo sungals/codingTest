@@ -33,7 +33,7 @@
 		F9C6700D25F7180900B85647 /* codingTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = codingTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C6701025F7180900B85647 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		F9C6701B25F7184100B85647 /* leetCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = leetCode.swift; sourceTree = "<group>"; };
-		F9C6701E25F7184900B85647 /* backjoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = backjoon.swift; path = codingTest/backjoon/backjoon.swift; sourceTree = SOURCE_ROOT; };
+		F9C6701E25F7184900B85647 /* backjoon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = backjoon.swift; path = backjoon/backjoon.swift; sourceTree = SOURCE_ROOT; };
 		F9C6702125F7185000B85647 /* programmers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = programmers.swift; sourceTree = "<group>"; };
 		F9C6702425F718B700B85647 /* Top100LikesQuestions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Top100LikesQuestions.swift; sourceTree = "<group>"; };
 		F9C6702725F718D700B85647 /* question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = question.swift; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 				F9C6701825F7181600B85647 /* programmers */,
 				F9C6701025F7180900B85647 /* main.swift */,
 			);
-			path = codingTest;
+			name = codingTest;
 			sourceTree = "<group>";
 		};
 		F9C6701825F7181600B85647 /* programmers */ = {
