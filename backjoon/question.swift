@@ -8,23 +8,62 @@
 import Foundation
 
 func q2675() {
-    // try1
-    _ = Int(readLine()!)!
-    let input = readLine()!.map{ String($0) }.split(separator: " ")
+    // try3
+    let cycle = Int(readLine()!)!
     
-    let repeatCount = Int(input[0].first!)!
-    let letter = input[1].map{ String($0)}
-    var result = [String]()
-    var n = 0
-    for i in 0..<letter.count {
-        while n < repeatCount {
-            result.append(letter[i])
-            n += 1
+    for _ in 0..<cycle {
+        let input = readLine()!.split(separator: " ")
+        let repeatCount = Int(input[0])!
+        let letters = input[1].map{ String($0) }
+        var n = 0
+        for i in 0..<letters.count {
+            while n < repeatCount {
+                print(letters[i], terminator: "")
+                n += 1
+            }
+            n = 0
         }
-        n = 0
+        print("")
     }
     
-    print(result.joined(separator: ""))
+//    // try2
+//    let cycle = Int(readLine()!)!
+//
+//    for _ in 0..<cycle {
+//        let input = readLine()!.map{ String($0) }.split(separator: " ")
+//        let repeatCount = Int(input[0].first!)!
+//        let letter = input[1].map{ String($0) }
+//        var n = 0
+//        for i in 0..<letter.count {
+//            while n < repeatCount {
+//                print(letter[i], terminator: "")
+//                n += 1
+//            }
+//            n = 0
+//        }
+//        print("")
+//    }
+    
+    
+    // try1
+//    let cycle = Int(readLine()!)!
+//    for _ in 0..<cycle {
+//        let input = readLine()!.map{ String($0) }.split(separator: " ")
+//        let repeatCount = Int(input[0].first!)!
+//        let letter = input[1].map{ String($0) }
+//        var result = [String]()
+//        var n = 0
+//        for i in 0..<letter.count {
+//            while n < repeatCount {
+//                result.append(letter[i])
+//                n += 1
+//            }
+//            n = 0
+//        }
+//
+//        print(result.joined(separator: ""))
+//    }
+    
 }
 
 func q10809() {
