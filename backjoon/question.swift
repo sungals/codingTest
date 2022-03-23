@@ -7,6 +7,46 @@
 
 import Foundation
 
+func q2675() {
+    // try1
+    _ = Int(readLine()!)!
+    let input = readLine()!.map{ String($0) }.split(separator: " ")
+    
+    let repeatCount = Int(input[0].first!)!
+    let letter = input[1].map{ String($0)}
+    var result = [String]()
+    var n = 0
+    for i in 0..<letter.count {
+        while n < repeatCount {
+            result.append(letter[i])
+            n += 1
+        }
+        n = 0
+    }
+    
+    print(result.joined(separator: ""))
+}
+
+func q10809() {
+    // try1
+    let alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j",
+                    "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
+                    "u", "v", "w", "x", "y", "z"]
+    
+    let input = readLine()!.map{ String($0)  }
+    print(alphabet.map { input.contains($0) ? input.firstIndex(of: $0)! : -1 }.map{ String($0) }.joined(separator: " "))
+}
+
+func q11720() {
+    // try1
+    _ = Int(readLine()!)!
+    print(readLine()!.map{ Int(String($0))! }.reduce(0){ $0 + $1 })
+}
+
+func q11654() {
+    print(readLine()!.map{ $0.asciiValue! }.first!)
+}
+
 func q1065() {
     // try 2
     let input = Int(readLine()!)!
@@ -453,19 +493,19 @@ func q1193() {
     print("\(i)/\(j)")
 }
 
-func q2675() {
-    let count = Int(readLine()!)!
-    for _ in 0 ..< count {
-        let line = readLine()!.split(separator: " ").map{ String($0) }
-        var arr:[String] = [String]()
-        for item in line[1] {
-            for _ in 0 ..< Int(line[0])! {
-                arr.append(String(item))
-            }
-        }
-        print(arr.joined(separator: ""))
-    }
-}
+//func q2675() {
+//    let count = Int(readLine()!)!
+//    for _ in 0 ..< count {
+//        let line = readLine()!.split(separator: " ").map{ String($0) }
+//        var arr:[String] = [String]()
+//        for item in line[1] {
+//            for _ in 0 ..< Int(line[0])! {
+//                arr.append(String(item))
+//            }
+//        }
+//        print(arr.joined(separator: ""))
+//    }
+//}
 
 func q1316() {
     let count = Int(readLine()!)!
@@ -505,13 +545,13 @@ func q1316() {
     print(res)
 }
 
-func q11720() {
-    let _ = Int(readLine()!)!
-    if let number = readLine() {
-        let arr = String(number).compactMap { Int(String($0)) }
-        print(arr.reduce(0, { $0 + $1 }))
-    }
-}
+//func q11720() {
+//    let _ = Int(readLine()!)!
+//    if let number = readLine() {
+//        let arr = String(number).compactMap { Int(String($0)) }
+//        print(arr.reduce(0, { $0 + $1 }))
+//    }
+//}
 
 //func q1065() {
 //    let input = Int(readLine()!)!
@@ -629,11 +669,11 @@ func q1152() {
     }
 }
 
-func q11654() {
-    if let input = readLine(), let ascii = Character(input).asciiValue {
-        print(ascii)
-    }
-}
+//func q11654() {
+//    if let input = readLine(), let ascii = Character(input).asciiValue {
+//        print(ascii)
+//    }
+//}
 
 func q2577() {
 //    let line = readLine()!.split(separator: " ").map{ Int(String($0))! }
