@@ -7,6 +7,40 @@
 
 import Foundation
 
+func q1157() {
+    let input = readLine()!.map{ String($0).lowercased() }
+    if input.count > 1000000 {
+        return
+    }
+    var dic = Dictionary<String, Int>()
+//    var arr = Array<Dictionary<String, Int>>()
+    _ = input.map({ s in
+        if dic[s] != nil {
+            dic[s]! += 1
+        } else {
+            dic[s] = 1
+        }
+    })
+    print(dic)
+    let max = dic.values.max()
+    var sorted = dic.sorted { $0.value < $1.value }
+    print(sorted)
+
+    for (index, element) in sorted.enumerated() {
+        if element.value != max {
+            sorted.remove(at: index)
+        }
+    }
+    print(sorted)
+    
+    if sorted.count > 1 {
+        print("?")
+    } else {
+        print(sorted[0].key.uppercased())
+    }
+
+}
+
 func q2675() {
     // try3
     let cycle = Int(readLine()!)!
@@ -681,25 +715,25 @@ func q2941() {
 }
 
 
-func q1157() {
-    if let input = readLine() {
-        let lower = input.lowercased()
-        var dicAlpha = [String:Int]()
-        for item in lower {
-            if dicAlpha.contains(where: { $0.0 == String(item) }) {
-                dicAlpha[String(item)]! += 1
-            } else {
-                dicAlpha.updateValue(0, forKey: String(item))
-            }
-        }
-        let maxValues = dicAlpha.filter({ $0.1 == dicAlpha.values.max() })
-//        let max = dicAlpha.values.max()
-//        let idx1 = dicAlpha.values.firstIndex(of: max!)
-//        let idx2 = (dicAlpha.keys as [Int]).firstIndex(of: max!)
-        
-        print(maxValues.count > 1 ? "?": maxValues.keys.first!.uppercased())
-    }
-}
+//func q1157() {
+//    if let input = readLine() {
+//        let lower = input.lowercased()
+//        var dicAlpha = [String:Int]()
+//        for item in lower {
+//            if dicAlpha.contains(where: { $0.0 == String(item) }) {
+//                dicAlpha[String(item)]! += 1
+//            } else {
+//                dicAlpha.updateValue(0, forKey: String(item))
+//            }
+//        }
+//        let maxValues = dicAlpha.filter({ $0.1 == dicAlpha.values.max() })
+////        let max = dicAlpha.values.max()
+////        let idx1 = dicAlpha.values.firstIndex(of: max!)
+////        let idx2 = (dicAlpha.keys as [Int]).firstIndex(of: max!)
+//
+//        print(maxValues.count > 1 ? "?": maxValues.keys.first!.uppercased())
+//    }
+//}
 
 func q1152() {
     if let input = readLine() {
