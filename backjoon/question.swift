@@ -8,37 +8,114 @@
 import Foundation
 
 func q1157() {
-    let input = readLine()!.map{ String($0).lowercased() }
-    if input.count > 1000000 {
-        return
+    // try4
+    let input = readLine()!
+    var arr = [Int](repeating: 0, count: 26)
+    for uniCode in input.utf8 {
+        // a to z == 65~90, A to Z == 97~122
+        let idx = uniCode > 90 ? uniCode - 97 : uniCode - 65
+        arr[Int(idx)] += 1
+        
     }
-    var dic = Dictionary<String, Int>()
-//    var arr = Array<Dictionary<String, Int>>()
-    _ = input.map({ s in
-        if dic[s] != nil {
-            dic[s]! += 1
-        } else {
-            dic[s] = 1
-        }
-    })
-    print(dic)
-    let max = dic.values.max()
-    var sorted = dic.sorted { $0.value < $1.value }
-    print(sorted)
-
-    for (index, element) in sorted.enumerated() {
-        if element.value != max {
-            sorted.remove(at: index)
+//    print(arr)
+    let max = arr.max()
+    var maxCnt = 0
+    for letter in arr {
+        if letter == max {
+            maxCnt += 1
         }
     }
-    print(sorted)
-    
-    if sorted.count > 1 {
+    if maxCnt > 1 {
         print("?")
     } else {
-        print(sorted[0].key.uppercased())
+        print(Character(UnicodeScalar(arr.firstIndex(of: max!)!+65)!))
     }
-
+    
+    // try3
+//    let input = readLine()!.map{ String($0).lowercased() }
+//    if input.count <= 1000000 {
+//        var dic = Dictionary<String, Int>()
+//        _ = input.map({ s in
+//            if dic[s] != nil {
+//                dic[s]! += 1
+//            } else {
+//                dic[s] = 1
+//            }
+//        })
+//
+//        //    print(dic)
+//        let max = dic.values.max()
+//        for (_, element) in dic.enumerated() {
+//            if element.value != max {
+//                dic.removeValue(forKey: element.key)
+//            }
+//        }
+//        //    print(sorted)
+//
+//        if dic.count > 1 {
+//            print("?")
+//        } else {
+//            print(dic.first!.key.uppercased())
+//        }
+//    }
+    
+    // try2
+//        let input = readLine()!.map{ String($0).lowercased() }
+//        if input.count <= 1000000 {
+//            var dic = Dictionary<String, Int>()
+//            _ = input.map({ s in
+//                if dic[s] != nil {
+//                    dic[s]! += 1
+//                } else {
+//                    dic[s] = 1
+//                }
+//            })
+//
+//            //    print(dic)
+//            let max = dic.values.max()
+//            var newValue = [String]()
+//            for (_, element) in dic.enumerated() {
+//                if element.value == max {
+//                    newValue.append(element.key)
+//                }
+//            }
+//            //    print(sorted)
+//
+//            if newValue.count > 1 {
+//                print("?")
+//            } else {
+//                print(newValue[0].uppercased())
+//            }
+//        }
+//    // try1
+//    let input = readLine()!.map{ String($0).lowercased() }
+//    if input.count <= 1000000 {
+//        var dic = Dictionary<String, Int>()
+//        _ = input.map({ s in
+//            if dic[s] != nil {
+//                dic[s]! += 1
+//            } else {
+//                dic[s] = 1
+//            }
+//        })
+//        //    print(dic)
+//        let max = dic.values.max()
+//        var newValue = [String]()
+//        let sorted = dic.sorted { $0.value < $1.value }
+////        //    print(sorted)
+//        for (_, element) in sorted.enumerated() {
+//            if element.value == max {
+//                newValue.append(element.key)
+//            }
+//        }
+//        //    print(sorted)
+//
+//        if newValue.count > 1 {
+//            print("?")
+//        } else {
+//            print(newValue[0].uppercased())
+//        }
+//    }
 }
 
 func q2675() {
