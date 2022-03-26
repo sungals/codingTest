@@ -7,6 +7,58 @@
 
 import Foundation
 
+func q1152() {
+    // try4
+    var count = 0
+    let input = readLine()!
+    var isChar = false
+    input.forEach {
+        if $0 == " " {
+            isChar = false
+        } else {
+            if isChar == false {
+                isChar = true
+                count += 1
+            }
+        }
+    }
+    print(count)
+    // try3
+//    var count = 0
+//
+//    let input = readLine()!.map{ $0.asciiValue! }
+//    for i in 0..<input.count - 1 {
+//        if input[i] == 32 {
+//            count += 1
+//        }
+//    }
+//
+//    if input.first! == 32 {
+//        count -= 1
+//    }
+//
+//    print(count+1)
+    // try2
+//    var count = 0
+//
+//    let input = readLine()!.map{ String($0) }
+//    for i in 0..<input.count - 1 {
+//        if input[i].utf8.first! == 32 {
+//            count += 1
+//        }
+//    }
+//
+//    if input.first!.utf8.first! == 32 && input.last!.utf8.first! == 32 {
+//        count -= 1
+//    } else if input.first!.utf8.first! == 32 {
+//        count -= 1
+//    }
+//
+//    print(count+1)
+//    // try1
+//    print(readLine()!.split(separator: " ").count)
+}
+
 func q1157() {
     // try4
     let input = readLine()!
@@ -812,12 +864,12 @@ func q2941() {
 //    }
 //}
 
-func q1152() {
-    if let input = readLine() {
-        let line = input.split(separator: " ").map{ String($0) }
-        print(line.count)
-    }
-}
+//func q1152() {
+//    if let input = readLine() {
+//        let line = input.split(separator: " ").map{ String($0) }
+//        print(line.count)
+//    }
+//}
 
 //func q11654() {
 //    if let input = readLine(), let ascii = Character(input).asciiValue {
