@@ -7,6 +7,36 @@
 
 import Foundation
 
+func q2098() {
+    // try2
+    let input = readLine()!.split(separator: " ")
+//    print(input)
+    let a = Int(String(String(input[0]).reversed()))
+    let b = Int(String(String(input[1]).reversed()))
+    print(a! > b! ? a! : b!)
+//    // try1
+//    let input = readLine()!.split(separator: " ")
+////    print(input)
+//    var a = String(input[0])
+//    var b = String(input[1])
+//    var first = a.first!
+//    var last = a.last!
+//    a.removeFirst()
+//    a.removeLast()
+//    a.insert(last, at: a.startIndex)
+//    a.insert(first, at: a.endIndex)
+//    print(a)
+//
+//    first = b.first!
+//    last = b.last!
+//    b.removeFirst()
+//    b.removeLast()
+//    b.insert(last, at: b.startIndex)
+//    b.insert(first, at: b.endIndex)
+//    print(b)
+//    print(a > b ? a : b)
+}
+
 func q1152() {
     // try4
     var count = 0
