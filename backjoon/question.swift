@@ -8,25 +8,40 @@
 import Foundation
 
 func q5622() {
-    // try2
-    let alpha = [["A", "B", "C"],
-                 ["D", "E", "F"],
-                 ["G", "H", "I"],
-                 ["J", "K", "L"],
-                 ["M", "N", "O"],
-                 ["P", "Q", "R", "S"],
-                 ["T", "U", "V"],
-                 ["W", "X", "Y", "Z"]]
-//    let input = readLine()!.map{ $0.lowercased() }
+    // try3
+    let alpha = [3, 3, 3,
+                 4, 4, 4,
+                 5, 5, 5,
+                 6, 6, 6,
+                 7, 7, 7,
+                 8, 8, 8, 8,
+                 9, 9, 9,
+                 10, 10, 10, 10]
     var count = 0
     _ = readLine()!.map {
-        for (j, k) in alpha.enumerated() {
-            if k.contains(String($0)) {
-                count += j + 3
-            }
-        }
+        count += alpha[Int($0.asciiValue!) - Int(Character("A").asciiValue!)]
     }
     print(count)
+    // try2
+//    let alpha = [["A", "B", "C"],
+//                 ["D", "E", "F"],
+//                 ["G", "H", "I"],
+//                 ["J", "K", "L"],
+//                 ["M", "N", "O"],
+//                 ["P", "Q", "R", "S"],
+//                 ["T", "U", "V"],
+//                 ["W", "X", "Y", "Z"]]
+////    let input = readLine()!.map{ $0.lowercased() }
+//    var count = 0
+//    _ = readLine()!.map {
+//        for (j, element) in alpha.enumerated() {
+//            if element.contains(String($0)) {
+//                count += j + 3
+//            }
+////            print($0.asciiValue)
+//        }
+//    }
+//    print(count)
     // try1
 //    let alpha = [["a", "b", "c"],
 //                 ["d", "e", "f"],
