@@ -7,6 +7,47 @@
 
 import Foundation
 
+func q5622() {
+    // try2
+    let alpha = [["A", "B", "C"],
+                 ["D", "E", "F"],
+                 ["G", "H", "I"],
+                 ["J", "K", "L"],
+                 ["M", "N", "O"],
+                 ["P", "Q", "R", "S"],
+                 ["T", "U", "V"],
+                 ["W", "X", "Y", "Z"]]
+//    let input = readLine()!.map{ $0.lowercased() }
+    var count = 0
+    _ = readLine()!.map {
+        for (j, k) in alpha.enumerated() {
+            if k.contains(String($0)) {
+                count += j + 3
+            }
+        }
+    }
+    print(count)
+    // try1
+//    let alpha = [["a", "b", "c"],
+//                 ["d", "e", "f"],
+//                 ["g", "h", "i"],
+//                 ["j", "k", "l"],
+//                 ["m", "n", "o"],
+//                 ["p", "q", "r", "s"],
+//                 ["t", "u", "v"],
+//                 ["w", "x", "y", "z"]]
+//    //    let input = readLine()!.map{ $0.lowercased() }
+//    var count = 0
+//    for (_, e) in readLine()!.map({ $0.lowercased() }).enumerated() {
+//        for (j, k) in alpha.enumerated() {
+//            if k.contains(String(e)) {
+//                count += j + 3
+//            }
+//        }
+//    }
+//    print(count)
+}
+
 func q2098() {
     // try2
     let input = readLine()!.split(separator: " ")
