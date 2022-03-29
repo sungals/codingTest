@@ -7,6 +7,32 @@
 
 import Foundation
 
+func q1316() {
+    let line = Int(readLine()!)!
+    var count = line
+    
+    for _ in 0..<line {
+        let input = readLine()!
+        var alpha = [String](repeating: "", count: input.count)
+        
+        for (index, element) in input.enumerated() {
+            let str = String(element)
+            if !alpha.contains(str) {
+                alpha[index] = str
+            } else {
+                if alpha[index-1] == str {
+                    alpha[index] = str
+                } else {
+                    count -= 1
+                    break
+                }
+            }
+        }
+        alpha.removeAll()
+    }
+    print(count)
+}
+
 func q2941() {
     // try2
 //    let special = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="]
@@ -21,7 +47,7 @@ func q2941() {
         122, 61
     ]
     
-    var input = readLine()!.map{ Int($0.asciiValue!) }
+    let input = readLine()!.map{ Int($0.asciiValue!) }
     var count = input.count
     
     var m = 3
@@ -835,29 +861,18 @@ func q1193() {
 //    }
 //}
 
-func q1316() {
-    let count = Int(readLine()!)!
-    var res = count
-    for _ in 0 ..< count {
-        if let line = readLine() {
-            let words = Array(line)
-            var arr:[String] = [String]()
-            var i = 0
-            
-            while i < words.count {
-                if arr.contains(String(words[i])) {
-                    if arr.last == String(words[i]) {
-                        arr.append(String(words[i]))
-                    } else {
-                        res -= 1
-                        break
-                    }
-                } else {
-                    arr.append(String(words[i]))
-                }
-
+//func q1316() {
+//    let count = Int(readLine()!)!
+//    var res = count
+//    for _ in 0 ..< count {
+//        if let line = readLine() {
+//            let words = Array(line)
+//            var arr:[String] = [String]()
+//            var i = 0
+//
+//            while i < words.count {
 //                if arr.contains(String(words[i])) {
-//                    if (String(words[i-1]) == String(words[i])) {
+//                    if arr.last == String(words[i]) {
 //                        arr.append(String(words[i]))
 //                    } else {
 //                        res -= 1
@@ -866,12 +881,23 @@ func q1316() {
 //                } else {
 //                    arr.append(String(words[i]))
 //                }
-                i += 1
-            }
-        }
-    }
-    print(res)
-}
+//
+////                if arr.contains(String(words[i])) {
+////                    if (String(words[i-1]) == String(words[i])) {
+////                        arr.append(String(words[i]))
+////                    } else {
+////                        res -= 1
+////                        break
+////                    }
+////                } else {
+////                    arr.append(String(words[i]))
+////                }
+//                i += 1
+//            }
+//        }
+//    }
+//    print(res)
+//}
 
 //func q11720() {
 //    let _ = Int(readLine()!)!
