@@ -7,6 +7,89 @@
 
 import Foundation
 
+func q2941() {
+    // try2
+//    let special = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="]
+    let special = [
+        100, 122, 61,
+        99, 61,
+        99, 45,
+        100, 45,
+        108, 106,
+        110, 106,
+        115, 61,
+        122, 61
+    ]
+    
+    var input = readLine()!.map{ Int($0.asciiValue!) }
+//    for uniCode in input {
+//        print(uniCode)
+//    }
+//    print("")
+//    var count = 0
+    
+    var n = 0
+    while input.count > 2 && n < input.count - 2 {
+        if special[0] == input[n] &&
+            special[1] == input[n+1] &&
+            special[2] == input[n+2] {
+            
+            input[n] = 1
+            input[n+1] = 0
+            input[n+2] = 0
+        }
+        n += 1
+    }
+//    print(input)
+    
+    var m = 3
+    n = 0
+    while m < special.count - 1 {
+        while input.count > 1 && n < input.count - 1 {
+            
+            if special[m] == input[n] &&
+                special[m+1] == input[n+1] {
+                
+                input[n] = 1
+                input[n+1] = 0
+            }
+            n += 1
+        }
+        n = 0
+        m += 1
+    }
+    
+//    print(input)
+    print(input.filter{ $0 > 0 }.count)
+    
+//    for (i, _) in special.enumerated() {
+//        for (j, _) in input.enumerated() {
+//            if i < input.count - 1 {
+//                if special[i...i+1] == input[i...i+1] {
+//                    input[i] = 1
+//                    input[i+1] = 0
+//                }
+//            }
+//        }
+//    }
+//    print(input)
+//    print(count)
+//    _ = special.map { s in
+//        print(s.first!.asciiValue!)
+//        print(s.last!.asciiValue!)
+//        print(s.utf8[0], s.utf8[1])
+//        s.forEach{
+//            print($0.utf8)
+//            print($0.utf8.first!)
+//            print($0.utf8.first!, $0.utf8.last!)
+//        }
+//        if input.contains(s) {
+//            input = input.replacingOccurrences(of: s, with: "a")
+//        }
+//    }
+//    print(input.count)
+}
+
 func q5622() {
     // try3
     let alpha = [3, 3, 3,
@@ -910,24 +993,24 @@ func q4344() {
     }
 }
 
-func q2941() {
-    let special = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="]
-    
-    if let input = readLine() {
-        var newInput = input
-        
-        var i = 0
-        while i < special.count {
-            if newInput.contains(special[i]) {
-                newInput = newInput.replacingOccurrences(of: special[i], with: "a")
-            } else {
-                i += 1
-            }
-        }
-        
-        print(newInput.count)
-    }
-}
+//func q2941() {
+//    let special = ["c=", "c-", "dz=", "d-", "lj", "nj", "s=", "z="]
+//
+//    if let input = readLine() {
+//        var newInput = input
+//
+//        var i = 0
+//        while i < special.count {
+//            if newInput.contains(special[i]) {
+//                newInput = newInput.replacingOccurrences(of: special[i], with: "a")
+//            } else {
+//                i += 1
+//            }
+//        }
+//
+//        print(newInput.count)
+//    }
+//}
 
 
 //func q1157() {
