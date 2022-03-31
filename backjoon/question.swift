@@ -7,6 +7,23 @@
 
 import Foundation
 
+func q1712() {
+    // try2
+    let input = readLine()!.split(separator: " ").map{ Int($0)! }
+    let a = input[0]
+    let b = input[1]
+    let c = input[2]
+    if c < b || c == b {
+        print("-1")
+    } else {
+        print((-a / (b - c)) + 1)
+    }
+    // try1
+//    var x = 0
+//    x = (-a / (b - c)) + 1
+//    print(x < 1 ? "-1" : x)
+}
+
 func q1316() {
     let line = Int(readLine()!)!
     var count = line
@@ -781,29 +798,29 @@ func q2869() {
 }
 
 
-func q1712() {
-    let line = readLine()!.split(separator: " ").map{ UInt(String($0)) }
-    let a: UInt = line[0]!
-    let b: UInt = line[1]!
-    let c: UInt = line[2]!
-    
-    if c < b || c == b {
-        print("-1")
-        return
-    }
-    
-//    a + (b * x) > c * x
-//    a > (c - b)x
-//    a / (c - b) > x
-//    x = a / (c - b) + 1
-    print(a / (c - b) + 1)
-    
-//    var i: UInt = 1
-//    while a + (b * i) >= c * i {
-//        i += 1
+//func q1712() {
+//    let line = readLine()!.split(separator: " ").map{ UInt(String($0)) }
+//    let a: UInt = line[0]!
+//    let b: UInt = line[1]!
+//    let c: UInt = line[2]!
+//
+//    if c < b || c == b {
+//        print("-1")
+//        return
 //    }
-//    print(i)
-}
+//
+////    a + (b * x) > c * x
+////    a > (c - b)x
+////    a / (c - b) > x
+////    x = a / (c - b) + 1
+//    print(a / (c - b) + 1)
+//
+////    var i: UInt = 1
+////    while a + (b * i) >= c * i {
+////        i += 1
+////    }
+////    print(i)
+//}
 
 func q1193() {
     let n = Int(readLine()!)!
