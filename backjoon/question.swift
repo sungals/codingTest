@@ -7,6 +7,24 @@
 
 import Foundation
 
+func q2292() {
+    let n = Int(readLine()!)!
+    var enter = 1
+    var p = 1
+    for i in 1 ..< n + 1 {
+        if n == 1 {
+            print("1")
+            break
+        }
+        enter += 1
+        p += i * 6
+        if p >= n {
+            print(enter)
+            break
+        }
+    }
+}
+
 func q1712() {
     // try2
     let input = readLine()!.split(separator: " ").map{ Int($0)! }
