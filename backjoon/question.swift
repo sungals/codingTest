@@ -7,6 +7,24 @@
 
 import Foundation
 
+func q10250() {
+    if let i = Int(readLine()!) {
+        for _ in 1 ... i {
+            let line = readLine()!.split(separator: " ").map { Int(String($0))! }
+            let h = line[0]
+            //        let w = line[1]
+            let n = line[2]
+            
+            let no = n % h == 0 ? n / h : n / h + 1
+            let floor = String(n % h == 0 ? h : n % h)
+            //        print("no: \(no)")
+            //        print("floor: \(floor)")
+            let strNo = no < 10 ? "0" + String(no) : String(no)
+            print(floor + strNo)
+        }
+    }
+}
+
 func q2292() {
     let n = Int(readLine()!)!
     var enter = 1
