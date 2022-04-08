@@ -7,6 +7,25 @@
 
 import Foundation
 
+func q2389() {
+    var n = Int(readLine()!)!
+    var result = 0
+    
+    if n % 5 == 0{
+        print(n / 5)
+    }
+    
+    while (n >= 0){
+        n -= 3
+        result += 1
+        if n % 5 == 0{
+            print(result + (n / 5))
+        }
+    }
+    
+    print(-1)
+}
+
 func q10250() {
     if let i = Int(readLine()!) {
         for _ in 1 ... i {
